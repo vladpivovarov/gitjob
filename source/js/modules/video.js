@@ -33,7 +33,7 @@ const video = () => {
       video.play();
     })
 
-    playPaused(video);
+    //playPaused(video);
 
     // При клике вне модального окна - скрываем его
     videoClose.addEventListener("click", () => {
