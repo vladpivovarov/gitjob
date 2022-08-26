@@ -8,28 +8,28 @@ const video = () => {
 
     btn.addEventListener("click", () => {
       videoWrap.classList.add("video-big_active");
-      video.play();
+      //video.play();
     })
 
     //При клике вне модального окна - скрываем его
-    // videoClose.addEventListener("click", () => {
-    //   if(videoWrap.classList.contains("video-big_active")) {
-    //     video.pause();
-    //     videoWrap.classList.remove("video-big_active")
-    //   }
-    // })
+    videoClose.addEventListener("click", () => {
+      if(videoWrap.classList.contains("video-big_active")) {
+        video.pause();
+        videoWrap.classList.remove("video-big_active")
+      }
+    })
 
     //При клике вне модального окна - скрываем его
-    // videoWrap.addEventListener("click", (event) => {
-    //   const clickedElementsTree = event.composedPath();
+    videoWrap.addEventListener("click", (event) => {
+      const clickedElementsTree = event.composedPath();
 
-    //   if(clickedElementsTree.includes(video)) {
-    //     return;
-    //   } else {
-    //     video.pause();
-    //     videoWrap.classList.remove("video-big_active");
-    //   }
-    // })
+      if(clickedElementsTree.includes(video)) {
+        return;
+      } else {
+        video.pause();
+        videoWrap.classList.remove("video-big_active");
+      }
+    })
   }
 
   const miniVideo = () => {
