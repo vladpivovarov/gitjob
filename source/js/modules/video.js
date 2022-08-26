@@ -11,25 +11,25 @@ const video = () => {
       video.play();
     })
 
-    // При клике вне модального окна - скрываем его
-    // videoClose.addEventListener("click", () => {
-    //   if(videoWrap.classList.contains("video-big_active")) {
-    //     video.pause();
-    //     videoWrap.classList.remove("video-big_active")
-    //   }
-    // })
+    //При клике вне модального окна - скрываем его
+    videoClose.addEventListener("click", () => {
+      if(videoWrap.classList.contains("video-big_active")) {
+        video.pause();
+        videoWrap.classList.remove("video-big_active")
+      }
+    })
 
-    // При клике вне модального окна - скрываем его
-    // videoWrap.addEventListener("click", (event) => {
-    //   const clickedElementsTree = event.composedPath();
+    //При клике вне модального окна - скрываем его
+    videoWrap.addEventListener("click", (event) => {
+      const clickedElementsTree = event.composedPath();
 
-    //   if(clickedElementsTree.includes(video)) {
-    //     return;
-    //   } else {
-    //     video.pause();
-    //     videoWrap.classList.remove("video-big_active");
-    //   }
-    // })
+      if(clickedElementsTree.includes(video)) {
+        return;
+      } else {
+        video.pause();
+        videoWrap.classList.remove("video-big_active");
+      }
+    })
   }
 
   const miniVideo = () => {
