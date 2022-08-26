@@ -1,27 +1,5 @@
 const video = () => {
 
-  const playPaused = (video) => {
-    video.addEventListener('click', function (e) {
-      e.preventDefault();
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-      }
-    })
-
-    // video.addEventListener('touchstart', function (e) {
-    //   e.preventDefault();
-    //   if (video.paused) {
-    //     video.play();
-    //   } else {
-    //     video.pause();
-    //   }
-    // })
-  }
-
-
-
   const fullVideo = () => {
     const videoWrap = document.querySelector(".video-big");
     const btn = document.querySelector(".smart__play-link");
@@ -32,8 +10,6 @@ const video = () => {
       videoWrap.classList.add("video-big_active");
       video.play();
     })
-
-    //playPaused(video);
 
     // При клике вне модального окна - скрываем его
     videoClose.addEventListener("click", () => {
