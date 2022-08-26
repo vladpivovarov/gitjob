@@ -1,0 +1,41 @@
+.screen {
+  position: relative;
+  flex: 1 0 100%;
+  padding-top: 183px;
+
+  @media (min-width: 1360px) and (max-height: 900px){
+    padding-top: 155px;
+  }
+
+  @media (max-width: 1200px) {
+    padding-top: 150px;
+  }
+
+  @media (max-width: 768px) {
+    padding-top: 120px;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 100px;
+  }
+
+  @media (max-width: 360px) {
+    padding-top: 80px;
+  }
+}
+
+.screen_free {
+  overflow: scroll;
+}
+
+.screen__content {
+  padding-right: 156px;
+
+  @media (max-width: 1200px) {
+    padding-right: 0;
+  }
+}
+
+.wrapper_free .screen {
+  min-height: 100vh;
+}

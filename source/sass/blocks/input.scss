@@ -1,0 +1,30 @@
+.input-block {
+  display: block;
+}
+
+.input-block__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+
+  @media (max-width: 480px) {
+    font-size: 1.1rem;
+  }
+}
+
+.input-block__input {
+  width: 100%;
+  padding: 15px 0;
+  border: none;
+  border-bottom: 1px solid #8D97A1;
+  background-color: transparent;
+  font-size: 1.25rem;
+
+  @media (max-width: 480px) {
+    padding: 8px 0;
+    font-size: 0.8rem;
+  }
+
+  &::placeholder {
+    color: #8D97A1;
+  }
+}

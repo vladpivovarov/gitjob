@@ -1,0 +1,20 @@
+.footer {
+  position: fixed;
+  bottom: 60px;
+  right: 30px;
+
+  .socials__list {
+    @media (max-width: 1200px) {
+      justify-content: center;
+    }
+  }
+
+  @media (min-width: 1360px) and (max-height: 900px){
+    bottom: 25px;
+    right: 25px;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+}

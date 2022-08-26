@@ -1,0 +1,61 @@
+.button-arrow {
+  width: 90px;
+  height: 90px;
+  border: 1px solid $dark;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  cursor: pointer;
+
+  @media (max-width: 1200px) {
+    width: 60px;
+    height: 60px;
+  }
+
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+
+    & svg {
+      max-width: 50%;
+    }
+  }
+}
+
+.button-arrow_prev {
+  .button-arrow__svg {
+    transform: rotate(180deg);
+  }
+
+  @media (max-width: 320px) {
+    .button-arrow__svg {
+      transform: rotate(0);
+    }
+  }
+}
+
+.button-arrow_next {
+  @media (max-width: 320px) {
+    .button-arrow__svg {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.button-arrow__svg_mobile {
+  display: none;
+
+  @media (max-width: $mobile) {
+    display: block;
+  }
+}
+
+.button-arrow__svg_desktop {
+  display: block;
+
+  @media (max-width: $mobile) {
+    display: none;
+  }
+}

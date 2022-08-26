@@ -1,0 +1,151 @@
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: -20000px;
+  right: initial;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  opacity: 0;
+  background-color: rgba(#031735, .7);
+  z-index: 10;
+  transition: opacity .5s;
+
+  @media (max-width: $tablet) {
+    padding: 0;
+  }
+}
+
+.modal_active {
+  left: 0;
+  right: 0;
+  opacity: 1;
+}
+
+.modal__inner {
+  position: relative;
+  flex: 0 1 1590px;
+  padding: 74px 60px 20px;
+  border-radius: 15px;
+  background-color: #EAF3F8;
+  box-shadow: 0px 0px 25px rgba(3, 23, 53, 0.3);
+
+  @media (max-width: 1350px) {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    border-radius: 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0 20px 20px;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+
+  @media (max-width: 480px) {
+    top: 15px;
+    right: 15px;
+  }
+}
+
+.modal__logo {
+  position: absolute;
+  top: 43px;
+  left: 31px;
+  width: 90px;
+  height: 90px;
+
+  @media (max-width: 480px) {
+    top: 0;
+    left: 21px;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+.modal__socials-title {
+  margin-bottom: 35px;
+  font-size: 1.875rem;
+  line-height: 1.333;
+
+  @media (max-width: 1350px) {
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+    line-height: 1.1;
+  }
+
+  @media (max-width: $tablet) {
+    margin-bottom: 10px;
+    text-align: center;
+  }
+}
+
+.modal__label {
+  margin-bottom: 19px;
+}
+
+.modal__input-list {
+  margin-bottom: 29px;
+
+  @media (max-width: $tablet) {
+    margin-bottom: 30px;
+  }
+
+  @media (max-width: 480px) {
+    margin-bottom: 10px;
+  }
+}
+
+.modal__button {
+  width: 100%;
+  margin-bottom: 20px;
+
+  @media (max-width: 1350px) {
+    padding: 7px 25px;
+    line-height: 1.1;
+  }
+}
+
+.modal__confidencial {
+  line-height: 1.375;
+  text-align: center;
+}
+
+.modal__form {
+  display: grid;
+  column-gap: 92px;
+
+  @media (max-width: 1350px) {
+    column-gap: 50px;
+  }
+}
+
+.modal__title {
+  grid-area: title;
+}
+
+.modal__socials {
+  grid-area: socials;
+  margin-top: -40px;
+}
+
+.modal__input-list {
+  grid-area: inputs;
+}
+
+.modal__btn-block {
+  grid-area: btn;
+}
+
+.modal__textarea {
+  grid-area: textarea;
+}
