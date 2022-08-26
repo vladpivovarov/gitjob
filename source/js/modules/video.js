@@ -8,7 +8,6 @@ const video = () => {
 
     btn.addEventListener("click", () => {
       videoWrap.classList.add("video-big_active");
-      //video.play();
     })
 
     //При клике вне модального окна - скрываем его
@@ -39,7 +38,6 @@ const video = () => {
 
     preview.addEventListener("click", () => {
       videoWrap.classList.add("how-work__video_active");
-      video.play();
     })
 
     //playPaused(video);
