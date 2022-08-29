@@ -1,27 +1,887 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru" class="no-js">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>GitJob - умный подбор IT специалистов</title>
+  <link rel="shortcut icon" href="./favicon/favicon.ico" type="image/x-icon">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
+  <link rel="manifest" href="./favicon/manifest.json">
+  <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
+  <link rel="stylesheet" href="css/style.min.css">
+  <script src="./js/additionally/scroll.min.js" defer></script>
+  <script src="./js/additionally/modernizr-custom.js" async></script>
+  <script src="./js/additionally/swiper-bundle.min.js" defer></script>
+  <script src="./js/additionally/swipe.js" defer></script>
+  <script src="./js/main.js" defer></script>
+  </script>
 </head>
 <body>
-  <video controls="controls">
-    <source src="./files/videoplayback.mp4" type="video/mp4"><source>
-  </video>
-  <script>
-    let video = document.querySelector("video");
-    video.addEventListener("click", (e) => {
-      e.preventDefault();
-      if(video.paused) {
-        video.play();
-        console.log("play");
-      } else if(video.played) {
-        video.pause();
-        console.log("pause");
-      }
-    })
-  </script>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__top">
+          <a href="/" class="header__logo logo">
+            <div class="logo__icon-block">
+              <div class="logo__icon">
+                <img src="./img/logo-icon.svg" alt="Логотип GitJob" width="80px" height="80px">
+              </div>
+              <div class="logo__text">
+                <img src="./img/logo-text.svg" alt="Логотип GitJob" width="181px" height="47px">
+              </div>
+            </div>
+            <div class="logo__desc-block">
+              <div class="logo__desc">
+                Сервис подбора IT специалистов
+              </div>
+            </div>
+          </a>
+          <div class="header__close">
+            <button class="header__close-btn">
+              <svg class="header__close-svg" width="13px" height="10px">
+                <use xlink:href="./img/sprite-svg/sprite.svg#icon-mini-arrow"></use>
+              </svg>
+              <svg class="header__close-svg header__close-svg_mini" width="30px" height="12px">
+                <use xlink:href="./img/sprite-svg/sprite.svg#icon-menu"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="header__medium">
+          <ul class="header__nav nav">
+            <li class="nav__item">
+              <a href="#tariff" class="nav__link" data-screen-number="5">
+                <div class="nav__link-icon">
+                  <svg class="nav__link-svg" width="12px" height="9.68px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-list"></use>
+                  </svg>
+                </div>
+                <div class="nav__link-text">
+                  Тарифы
+                </div>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#work" class="nav__link" data-screen-number="1">
+                <div class="nav__link-icon">
+                  <svg class="nav__link-svg" width="14px" height="14.23px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-gear"></use>
+                  </svg>
+                </div>
+                <div class="nav__link-text">
+                  Как работает сервис
+                </div>
+              </a>
+            </li>
+            <li class="nav__item">
+              <a href="#" class="nav__link modal-open-js modal-login-open-js">
+                <div class="nav__link-icon">
+                  <svg class="nav__link-svg" width="12px" height="14.19px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-login"></use>
+                  </svg>
+                </div>
+                <div class="nav__link-text">
+                  Личный кабинет
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="header__bottom">
+          <dl class="header__contacts contacts">
+            <div class="contacts__line">
+              <dt class="contacts__title">
+                Телефон:
+              </dt>
+              <dd class="contacts__desc">
+                +7 (495) 550 35 25
+              </dd>
+            </div>
+            <div class="contacts__line">
+              <dt class="contacts__title">
+                E-mail:
+              </dt>
+              <dd class="contacts__desc">
+                it@git-job.com
+              </dd>
+            </div>
+          </dl>
+          <div class="header__buttons-block">
+            <button class="header__button btn btn_question btn_black modal-mess-open-js">
+              Задать вопрос
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main class="page">
+      <div class="page__wrapper">
+        <div class="page__screen screen smart">
+          <div class="container smart__container">
+            <div class="screen__content smart__content">
+              <div class="smart__desc">
+                <h1 class="smart__title title">Умный подбор IT
+                  <div class="title__small">специалистов за 24 часа</div>
+                </h1>
+                <div class="smart__title-text">
+                  Выбор специалистов по нужным вам критериям с подтвержденным опытом из 3 000 000 человек
+                </div>
+              </div>
+              <div class="smart__play">
+                <div class="smart__play-images">
+                  <a href="#" class="smart__play-link">
+                    <img src="./img/play.png" alt="за 60 секунд покажем как работает
+                    лучший сервис на рынке">
+                  </a>
+                  <div class="smart__play-faces">
+                    <img src="./img/faces.webp">
+                  </div>
+                </div>
+                <div class="smart__play-desc">
+                  за 60 секунд покажем как работает лучший сервис на рынке
+                </div>
+              </div>
+              <div class="smart__button-block">
+                <button class="btn btn_black smart__button btn_big modal-trial-open-js">
+                  попробуйте бесплатно на 7 дней
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="work" class="page__screen screen how-work">
+          <div class="container how-work__container">
+            <div class="screen__content how-work__content">
+              <h2 class="subtitle how-work__title">
+                За 60 секунд покажем, как работает
+                <span class="subtitle__green">GitJob</span>
+              </h2>
+              <div class="how-work__video">
+                <video controls="controls">
+                  <source src="./files/Показываем за 90 секунд как работает GitJob (480).mp4"><source>
+                </video>
+                <div class="how-work__video-poster">
+                  <picture>
+                    <source media="(max-width: 480px)" srcset="./img/video-mobile.png">
+                    <img src="./img/video.png" alt="Показываем за 90 секунд как работает GitJob">
+                  </picture>
+                </div>
+              </div>
+              <div class="how-work__desc">
+                Получите доступ к полному функционалу
+                <span class="subtitle__green">GitJob</span>
+                 бесплатно на 7 дней
+              </div>
+              <div class="how-work__button-block">
+                <button class="btn btn_black how-work__button btn_big modal-trial-open-js">
+                  Получить доступ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__screen screen difference">
+          <div class="container difference__container">
+            <div class="page-mini">
+              <div class="screen__content page-mini__wrapper">
+                <div class="page-mini__screen">
+                  <div class="difference__desc difference__desc_1">
+                    <h2 class="subtitle difference__title">
+                      <strong>В умном режиме </strong>
+                      <span class="subtitle__green"> GitJob </span>
+                      анализирует манифест файл проекта
+                    </h2>
+                    <p class="difference__desc-first">
+                      это ключевое отличие нашего сервиса
+                    </p>
+                    <p class="difference__desc-second">
+                      Указываете ссылку на ваш репозиторий
+                    </p>
+                  </div>
+                  <div class="difference__img-block difference__img-block_1">
+                    <img class="difference__img difference__img_1" src="./img/difference.webp">
+                  </div>
+                </div>
+                <div class="page-mini__screen">
+                  <div class="difference__desc difference__desc_2">
+                    <h2 class="subtitle difference__title">
+                      <span class="subtitle__green"> GitJob </span>
+                      <b>подбирает кандидатов,</b>
+                      <br>
+                      исходя из используемых
+                      в вашем проекте
+                      <br>
+                      языков и библиотек
+                    </h2>
+                  </div>
+                  <div class="difference__img-block difference__img-block_2">
+                    <img class="difference__img difference__img_2" src="./img/difference2.webp">
+                  </div>
+                </div>
+                <div class="page-mini__screen">
+                  <div class="difference__img-block difference__img-block_3">
+                    <img class="difference__img difference__img_3" src="./img/difference3.webp">
+                  </div>
+                  <div class="difference__desc difference__desc_3">
+                    <h2 class="subtitle difference__title">
+                      <b>С помощью</b>
+                      <span class="subtitle__green"> GitJob </span>
+                      вы получаете высокоточную
+                      подборку кандидатов
+                    </h2>
+                    <button class="btn btn_black difference__button btn_big modal-trial-open-js">
+                      попробуйте бесплатно на 7 дней
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div class="page-mini__controls">
+                <button class="page-mini__button-prev button-arrow button-arrow_prev">
+                  <svg class="button-arrow__svg button-arrow__svg_desktop" width="26px" height="14.6px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-arrow"></use>
+                  </svg>
+                  <svg class="button-arrow__svg button-arrow__svg_mobile" width="10px" height="17px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-mini-arrow"></use>
+                  </svg>
+                </button>
+                <div class="page-mini__pagination"></div>
+                <button class="page-mini__button-next button-arrow button-arrow_next">
+                  <svg class="button-arrow__svg button-arrow__svg_desktop" width="26px" height="14.6px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-arrow"></use>
+                  </svg>
+                  <svg class="button-arrow__svg button-arrow__svg_mobile" width="10px" height="17px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-mini-arrow"></use>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__screen screen search">
+          <div class="container search__container">
+            <div class="screen__content search__content">
+              <div class="search__main">
+                <div class="search__desc">
+                  <h2 class="subtitle search__title">
+                    А еще в
+                    <span class="subtitle__green"> GitJob </span>
+                    есть возможность
+                    <b>ручного поиска</b>
+                  </h2>
+                  <div class="search__desc-line">
+                    <div class="search__desc-example">Например: </div>
+                    нужно найти <b>python</b> разработчика
+                    <br>
+                    со знанием <b>django</b>-фреймворка
+                  </div>
+                </div>
+                <div class="search__img-block">
+                  <img class="search__img" src="./img/search.webp" alt="Ручной поиск">
+                </div>
+              </div>
+              <div class="search__button-block">
+                <button class="btn btn_black search__button btn_big modal-trial-open-js">
+                  попробуйте бесплатно на 7 дней
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__screen screen use">
+          <div class="container use__container">
+            <div class="screen__content use__content">
+              <h2 class="use__title">Уже пользуются и говорят</h2>
+              <div class="use__content-block">
+                <div class="use__img-block">
+                  <img src="./img/use.webp" alt="Василий Иванов" width="534px" height="534px">
+                </div>
+                <div class="use__desc">
+                  <div class="use__subtitle">
+                    Сократили время на закрытие своих позиций на 230%
+                  </div>
+                  <div class="use__comment">
+                    После полноценного тестирования сервиса, мы готовы рекомендовать этот инструмент всем, кто ищет разработчиков к себе на работу работать.
+                  </div>
+                  <div class="use__footer">
+                    <div class="use__footer-img">
+                      <img src="./img/domru.webp" alt="dom.ru" width="232px" height="46px">
+                    </div>
+                    <div class="use__footer-comment-author">
+                      <b>Василий Иванов,</b>
+                      <br>
+                      технический директор холдинга дом.ру
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="tariff" class="page__screen screen tariff">
+          <div class="container tariff__container">
+            <div class="screen__content tariff__content">
+              <h2 class="tariff__title">
+                Тарифы
+                <b>GitJob</b>
+              </h2>
+              <div class="swipe slider" id='slider'>
+                <ul class="tariff__list swipe-wrap">
+                  <li class="tariff__item">
+                    <div class="tariff__subtitle">
+                      Под ключ
+                    </div>
+                    <div class="tariff__price">
+                      250 000 руб./вакансия
+                    </div>
+                    <div class="tariff__desc-block">
+                      <div class="tariff__desc tariff__desc_big">
+                        Мы подберем для вас
+                        нужного вам кандидата
+                        по вашим критериям
+                      </div>
+                    </div>
+                    <div class="tariff__btn-block">
+                      <button class="btn btn_black tariff__button btn_big modal-trial-open-js">
+                        Оплатить
+                      </button>
+                    </div>
+                  </li>
+                  <li class="tariff__item">
+                    <div class="tariff__subtitle">
+                      Корпорация
+                    </div>
+                    <div class="tariff__price">
+                      185 000 руб./год
+                    </div>
+                    <div class="tariff__desc-block">
+                      <div class="tariff__desc tariff__desc_icon">
+                        <div class="tariff__desc-icon">
+                          <svg class="tariff__icon" width="22px" height="26.02px">
+                            <use xlink:href="./img/sprite-svg/sprite.svg#icon-login"></use>
+                          </svg>
+                        </div>
+                        <div class="tariff__desc-text">
+                          3 аккаунта
+                        </div>
+                      </div>
+                      <div class="tariff__desc tariff__desc_icon">
+                        <div class="tariff__desc-icon">
+                          <svg class="tariff__icon" width="28px" height="13.5px">
+                            <use xlink:href="./img/sprite-svg/sprite.svg#icon-infinite"></use>
+                          </svg>
+                        </div>
+                        <div class="tariff__desc-text">
+                          неограниченное кол-во запросов и 15 000 открытых резюме
+                        </div>
+                      </div>
+                      <div class="tariff__desc tariff__desc_icon">
+                        <div class="tariff__desc-icon">
+                          <svg class="tariff__icon" width="24px" height="30.14px">
+                            <use xlink:href="./img/sprite-svg/sprite.svg#icon-map"></use>
+                          </svg>
+                        </div>
+                        <div class="tariff__desc-text">
+                          без ограничений по гео
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tariff__btn-block">
+                      <button class="btn btn_black tariff__button btn_big modal-trial-open-js">
+                        Оплатить
+                      </button>
+                    </div>
+                  </li>
+                  <li class="tariff__item">
+                    <div class="tariff__subtitle">
+                      Компания
+                    </div>
+                    <div class="tariff__price">
+                      130 000 руб./год
+                    </div>
+                    <div class="tariff__desc-block">
+                      <div class="tariff__desc tariff__desc_icon">
+                        <div class="tariff__desc-icon">
+                          <svg class="tariff__icon" width="22px" height="26.02px">
+                            <use xlink:href="./img/sprite-svg/sprite.svg#icon-login"></use>
+                          </svg>
+                        </div>
+                        <div class="tariff__desc-text">
+                          1 аккаунт
+                        </div>
+                      </div>
+                      <div class="tariff__desc tariff__desc_icon">
+                        <div class="tariff__desc-icon">
+                          <svg class="tariff__icon" width="28px" height="13.5px">
+                            <use xlink:href="./img/sprite-svg/sprite.svg#icon-infinite"></use>
+                          </svg>
+                        </div>
+                        <div class="tariff__desc-text">
+                          неограниченное кол-во запросов и 9 000 открытых резюме
+                        </div>
+                      </div>
+                      <div class="tariff__desc tariff__desc_icon">
+                        <div class="tariff__desc-icon">
+                          <svg class="tariff__icon" width="24px" height="30.14px">
+                            <use xlink:href="./img/sprite-svg/sprite.svg#icon-map"></use>
+                          </svg>
+                        </div>
+                        <div class="tariff__desc-text">
+                          без ограничений по гео
+                        </div>
+                      </div>
+                    </div>
+                    <div class="tariff__btn-block">
+                      <button class="btn btn_black tariff__button btn_big modal-trial-open-js">
+                        Оплатить
+                      </button>
+                    </div>
+                  </li>
+                </ul>
+                <button class="swipe__left swipe__btn"></button>
+                <button class="swipe__right swipe__btn"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="page__screen screen question screen_last">
+          <div class="container question__container">
+            <div class="screen__content question__content">
+              <div class="question__main">
+                <div class="question__left">
+                  <h2 class="question__title">Нас часто спрашивают</h2>
+                  <ul class="question__list">
+                    <li class="question__item question__item_active">
+                      <div class="question__subtitle">
+                        В чём ключевое отличие GitJob от аналогов?
+                      </div>
+                      <div class="question__text">
+                        GitJob умеет сканировать репозитории вашего проекта, а затем репозитории разработчиков на Github и Stack Overflow. Так система понимает: 1) кандидаты с какими навыками нужны для вашего проекта; 2) на основе анализа профилей предлагает только тех кандидатов, чьи навыки подходят вашему проекту (стек навыков разработчика определяется не по заявленным в профиле, а по репозиториям и используемым библиотекам). Так вы получаете список кандидатов только с релевантным опытом.
+                      </div>
+                      <div class="question__btn">
+                        <svg class="question__icon" width="32.2px" height="32.2px">
+                          <use xlink:href="./img/sprite-svg/sprite.svg#icon-close"></use>
+                        </svg>
+                      </div>
+                    </li>
+                    <li class="question__item">
+                      <div class="question__subtitle">
+                        Какие документы нужны для начала работы с GitJob?
+                      </div>
+                      <div class="question__text">
+                        Мы используем полностью элекронный документооборот, для начала работы нам нужен стандартный набор документов – ИНН, ОГРН, подпись уполномоченного лица компании.
+                      </div>
+                      <div class="question__btn">
+                        <svg class="question__icon" width="32.2px" height="32.2px">
+                          <use xlink:href="./img/sprite-svg/sprite.svg#icon-close"></use>
+                        </svg>
+                      </div>
+                    </li>
+                    <li class="question__item">
+                      <div class="question__subtitle">
+                        За что нужно платить / какие есть тарифы?
+                      </div>
+                      <div class="question__text">
+                        Сейчас сервис находится на стадии бета-теста и воспользоваться им можно совершенно бесплатно. Бета-тест продлится до конца сентября.
+                      </div>
+                      <div class="question__btn">
+                        <svg class="question__icon" width="32.2px" height="32.2px">
+                          <use xlink:href="./img/sprite-svg/sprite.svg#icon-close"></use>
+                        </svg>
+                      </div>
+                    </li>
+                    <li class="question__item">
+                      <div class="question__subtitle">
+                        Как пополняется база разработчиков?
+                      </div>
+                      <div class="question__text">
+                        База разработчиков ежедневно пополняется благодаря: 1) каждому поиску, совершённому в GitJob. Например, вы начали искать Python-разработчика в Москве. Система сканирует профили Github и Stack Overflow и подбирает подходящие. Вы получаете список кандидатов, который в это же время пополняет нашу базу разработчиков Python из Москвы. И так каждый новый поиск, совершённый на сайте, пополняет существующие базы; 2) также база будет пополняться по мере того, как разработчики сами будут регистрировать свои профили на GitJob, чтобы получать более точные и релевантные офферы.
+                      </div>
+                      <div class="question__btn">
+                        <svg class="question__icon" width="32.2px" height="32.2px">
+                          <use xlink:href="./img/sprite-svg/sprite.svg#icon-close"></use>
+                        </svg>
+                      </div>
+                    </li>
+                    <li class="question__item">
+                      <div class="question__subtitle">
+                        Как вы можете гарантировать сохранность данных, если утверждаете, что сканируете репозитории? Это безопасно?
+                      </div>
+                      <div class="question__text">
+                        GitJob анализирует только манифест-файл, мы не парсим и не сохраняем ваш код. Сервис доступен для проектов с закрытыми репозиториями.
+                      </div>
+                      <div class="question__btn">
+                        <svg class="question__icon" width="32.2px" height="32.2px">
+                          <use xlink:href="./img/sprite-svg/sprite.svg#icon-close"></use>
+                        </svg>
+                      </div>
+                    </li>
+                    <li class="question__item">
+                      <div class="question__subtitle">
+                        Есть ручной поиск разработчиков по языкам / библиотекам?
+                      </div>
+                      <div class="question__text">
+                        Да, есть и такой режим поиска, где вы указываете необходимые языки / библиотеки. Далее система подбирает вам кандидатов, исходя из анализа репозиториев в их профилях на Github и Stack Overflow.
+                      </div>
+                      <div class="question__btn">
+                        <svg class="question__icon" width="32.2px" height="32.2px">
+                          <use xlink:href="./img/sprite-svg/sprite.svg#icon-close"></use>
+                        </svg>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="question__right">
+                  <form action="#" class="answer">
+                    <div class="answer__title">
+                      Не нашли ответа на свой вопрос и нужна консультация?
+                    </div>
+                    <div class="answer__desc">
+                      Введите ваши контактные данные, наши специалисты свяжутся с вами и с удовольствием ответят на все вопросы.
+                    </div>
+                    <label class="answer__label input-block">
+                      <div class="answer__subtitle input-block__title">
+                        Имя*
+                      </div>
+                      <input type="text" name="name" class="answer__input input-block__input validate-name-js" placeholder="Ваше имя">
+                    </label>
+                    <label class="answer__label input-block">
+                      <div class="answer__subtitle input-block__title">
+                        Телефон*
+                      </div>
+                      <input type="text" name="phone" class="answer__input input-block__input validate-phone-js mask-phone-js" placeholder="Ваш телефон">
+                    </label>
+                    <label class="answer__label input-block">
+                      <div class="answer__subtitle input-block__title">
+                        E-mail*
+                      </div>
+                      <input type="text" name="email" class="answer__input input-block__input validate-email-js" placeholder="Ваш e-mail">
+                    </label>
+                    <div class="answer__btn-block">
+                      <button type="submit" class="btn btn_black answer__button btn_big">
+                        Получить консультацию
+                      </button>
+                    </div>
+                    <div class="answer__footer">
+                      <div class="answer__give">
+                        или
+                        <a href="#" class="answer__link green-link modal-mess-open-js">задайте</a>
+                         ваш вопрос онлайн
+                      </div>
+                      <div class="answer__confidencial">
+                        Оставляя свои контактные, данные вы соглашаетесь с условиями пользовательского соглашения и политикой конфиденциальности
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="question__footer q-footer">
+                <div class="q-footer__contacts">
+                  <div class="q-footer__left">
+                    <div class="q-footer__title">
+                      Контакты
+                    </div>
+                    <div class="q-footer__copyright">
+                      © GitJob <span class="q-footer__year">2022</span>
+                    </div>
+                    <div class="q-footer__author">
+                      Разработка сайта
+                      <br>
+                      Vladislav Pivovarov
+                      <a href="https://t.me/webRvlad" class="q-footer__address">@webRVlad</a>
+                    </div>
+                  </div>
+                  <div class="q-footer__center">
+                    <div class="q-footer__subtitle">
+                      Телефон
+                    </div>
+                    <div class="q-footer__desc">
+                      <a href="tel:84955503525">+7 (495) 550 35 25</a>
+                    </div>
+                  </div>
+                  <div class="q-footer__right">
+                    <div class="q-footer__subtitle">
+                      E-mail:
+                    </div>
+                    <div class="q-footer__desc">
+                      it@git-job.com
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page__pagination">
+      </div>
+      <div class="page__scroll"></div>
+    </main>
+    <footer class="footer">
+      <ul class="socials__list">
+        <li class="socials__item">
+          <a href="https://vk.com/gitjob" target="_blank" class="socials__link">
+            <svg class="socials__svg" width="24.28px" height="17px">
+              <use xlink:href="./img/sprite-svg/sprite.svg#icon-youtube"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="https://vk.com/gitjob" target="_blank" class="socials__link">
+            <svg class="socials__svg" width="11.43px" height="22px" fill="#000">
+              <use xlink:href="./img/sprite-svg/sprite.svg#icon-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="https://vk.com/gitjob" target="_blank" class="socials__link">
+            <svg class="socials__svg" width="20px" height="20px">
+              <use xlink:href="./img/sprite-svg/sprite.svg#icon-instagram"></use>
+            </svg>
+          </a>
+        </li>
+        <li class="socials__item">
+          <a href="https://vk.com/gitjob" target="_blank" class="socials__link socials__link_vk">
+            <svg class="socials__svg" width="20px" height="11.67px">
+              <use xlink:href="./img/sprite-svg/sprite.svg#icon-vk"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </footer>
+    <div class="video video-big">
+      <video controls="controls" preload="auto">
+        <source src="./files/Показываем за 90 секунд как работает GitJob (480).mp4" type="video/mp4"><source>
+      </video>
+      <div class="video-big__close"></div>
+    </div>
+    <div class="modal-login modal">
+      <div class="modal-login__inner modal__inner">
+        <div class="modal-login__title">
+          Вход в систему
+        </div>
+        <form action="#" method="post" class="modal-login__form">
+          <label class="modal-login__label input-block">
+            <div class="modal-login__subtitle input-block__title">
+              E-mail
+            </div>
+            <input type="text" name="email" class="modal-login__input input-block__input validate-email-js" placeholder="Ваш e-mail">
+          </label>
+          <label class="modal-login__label input-block">
+            <div class="modal-login__subtitle input-block__title">
+              Пароль
+            </div>
+            <input type="password" name="pass" placeholder="* * * * * * * *" class="modal-login__input input-block__input validate-pass-js">
+          </label>
+          <div class="modal-login__btn-block">
+            <button type="submit" class="btn btn_black modal-login__button btn_big">
+              Войти
+            </button>
+          </div>
+          <div class="modal-login__repair">
+            <a href="#" class="modal-login__repair-link green-link">
+              Восстановить доступ
+            </a>
+          </div>
+        </form>
+        <button class="modal-login__close btn-close modal__close">
+          <svg class="modal-login__icon" width="32.2px" height="32.2px">
+            <use xlink:href="./img/sprite-svg/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <div class="modal-login__new">
+          Нет аккаунта в системе?
+          <a href="#" class="modal-login__register-link green-link">Пройдите регистрацию.</a>
+        </div>
+      </div>
+    </div>
+    <div class="modal modal-trial">
+      <div class="modal__inner">
+        <form action="#" method="post" class="modal__form modal-trial__form">
+          <div class="modal-trial__title modal__title">
+            Для получения моментального доступа ко всем функциям
+            <b> GitJob </b>
+            на 7 дней
+          </div>
+          <div class="modal__socials">
+            <div class="modal__socials-title">
+              Присоединяйтесь к нам в социальных сетях:
+            </div>
+            <ul class="modal__socials-list socials__list socials__list_big">
+              <li class="socials__item">
+                <a href="https://vk.com/gitjob" target="_blank" class="socials__link">
+                  <svg class="socials__svg" width="36.42px" height="25.5px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-youtube"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="https://vk.com/gitjob" target="_blank" class="socials__link">
+                  <svg class="socials__svg" width="17.14px" height="33px" fill="#000">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="https://vk.com/gitjob" target="_blank" class="socials__link">
+                  <svg class="socials__svg" width="30px" height="30px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-instagram"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="https://vk.com/gitjob" target="_blank" class="socials__link socials__link_vk">
+                  <svg class="socials__svg" width="30px" height="17.5px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-vk"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="modal__input-list">
+            <div class="modal__input-title">
+              Пожалуйста, введите ваши контактные данные
+            </div>
+            <label class="modal__label input-block">
+              <div class="modal__subtitle input-block__title">
+                Имя*
+              </div>
+              <input type="text" name="name" class="modal__input input-block__input validate-name-js" placeholder="Ваше имя">
+            </label>
+            <label class="modal__label input-block">
+              <div class="modal__subtitle input-block__title">
+                Телефон*
+              </div>
+              <input type="text" name="phone" class="modal__input input-block__input validate-phone-js mask-phone-js" placeholder="Ваш телефон">
+            </label>
+            <label class="modal__label input-block">
+              <div class="modal__subtitle input-block__title">
+                E-mail*
+              </div>
+              <input type="text" name="email" class="modal__input input-block__input validate-email-js" placeholder="Ваш e-mail">
+            </label>
+          </div>
+          <div class="modal__btn-block">
+            <button type="submit" class="btn btn_black modal__button btn_big">
+              Получить бесплатный доступ на 7 дней
+            </button>
+            <div class="modal__confidencial">
+              Оставляя свои контактные, данные вы соглашаетесь с условиями пользовательского соглашения и политикой конфиденциальности
+            </div>
+          </div>
+        </form>
+        <div class="modal__thanks"></div>
+        <button class="modal__close btn-close">
+          <svg class="modal-login__icon" width="32.2px" height="32.2px">
+            <use xlink:href="./img/sprite-svg/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <a href="/" class="modal__logo">
+          <img class="modal__logo-img" src="./img/logo-icon.svg" alt="GitJob logo" width="90px" height="90px">
+        </a>
+      </div>
+    </div>
+    <div class="modal modal-mess">
+      <div class="modal__inner">
+        <form action="#" method="post" class="modal__form modal-mess__form">
+          <div class="modal__title modal-mess__title">
+            <div class="modal-mess__title-main">
+              Можете задать нам вопрос
+            </div>
+            <div class="modal-mess__desc">
+              через форму обратной связи или в мессенджерах
+            </div>
+          </div>
+          <div class="modal__socials">
+            <div class="modal__socials-title">
+              или напишите нам в любой из мессенджеров:
+            </div>
+            <ul class="modal__socials-list socials__list socials__list_big">
+              <li class="socials__item">
+                <a href="https://vk.com/gitjob" target="_blank" class="socials__link">
+                  <svg class="socials__svg" width="34px" height="34px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-whatsapp"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="https://vk.com/gitjob" target="_blank" class="socials__link">
+                  <svg class="socials__svg" width="17.14px" height="33px" fill="#000">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-facebook"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="https://vk.com/gitjob" target="_blank" class="socials__link">
+                  <svg class="socials__svg" width="35px" height="29px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-tg"></use>
+                  </svg>
+                </a>
+              </li>
+              <li class="socials__item">
+                <a href="https://vk.com/gitjob" target="_blank" class="socials__link socials__link_vk">
+                  <svg class="socials__svg" width="30px" height="17.5px">
+                    <use xlink:href="./img/sprite-svg/sprite.svg#icon-vk"></use>
+                  </svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="modal__textarea modal-mess__textarea-block">
+            <textarea class="modal-mess__textarea" name="modal-mess"placeholder="Пожалуйста, введите ваш вопрос"></textarea>
+          </div>
+          <div class="modal__input-list">
+            <label class="modal__label input-block">
+              <div class="modal__subtitle input-block__title">
+                Имя*
+              </div>
+              <input type="text" name="name" class="modal__input input-block__input validate-name-js" placeholder="Ваше имя">
+            </label>
+            <label class="modal__label input-block">
+              <div class="modal__subtitle input-block__title">
+                Телефон*
+              </div>
+              <input type="text" name="phone" class="modal__input input-block__input validate-phone-js mask-phone-js" placeholder="Ваш телефон">
+            </label>
+            <label class="modal__label input-block">
+              <div class="modal__subtitle input-block__title">
+                E-mail*
+              </div>
+              <input type="text" name="email" class="modal__input input-block__input validate-email-js" placeholder="Ваш e-mail">
+            </label>
+          </div>
+          <div class="modal__btn-block">
+            <button type="submit" class="btn btn_black modal__button btn_big">
+              Задать вопрос
+            </button>
+            <div class="modal__confidencial">
+              Оставляя свои контактные, данные вы соглашаетесь с условиями пользовательского соглашения и политикой конфиденциальности
+            </div>
+          </div>
+        </form>
+        <div class="modal__thanks"></div>
+        <button class="modal__close btn-close">
+          <svg class="modal-login__icon" width="32.2px" height="32.2px">
+            <use xlink:href="./img/sprite-svg/sprite.svg#icon-close"></use>
+          </svg>
+        </button>
+        <a href="/" class="modal__logo">
+          <img class="modal__logo-img" src="./img/logo-icon.svg" alt="GitJob logo" width="90px" height="90px">
+        </a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
