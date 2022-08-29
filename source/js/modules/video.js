@@ -12,8 +12,6 @@ const video = () => {
       e.preventDefault();
       if(video.paused) {
         video.play();
-        video.play();
-        video.play();
         console.log("play");
       } else if(video.played) {
         video.pause();
@@ -23,56 +21,56 @@ const video = () => {
       let timerId = setInterval(() => console.log(video.paused), 1000);
     })
 
-    btn.addEventListener("click", () => {
-      videoWrap.classList.add("video-big_active");
+    // btn.addEventListener("click", () => {
+    //   videoWrap.classList.add("video-big_active");
 
-      if(video.paused) {
-        video.play();
-      }
-    })
+    //   if(video.paused) {
+    //     video.play();
+    //   }
+    // })
 
 
-
-    //При клике вне модального окна - скрываем его
-    videoClose.addEventListener("click", () => {
-      if(videoWrap.classList.contains("video-big_active")) {
-        if(video.played) {
-          video.pause();
-        }
-
-        videoWrap.classList.remove("video-big_active")
-      }
-    })
 
     //При клике вне модального окна - скрываем его
-    videoWrap.addEventListener("click", (event) => {
-      const clickedElementsTree = event.composedPath();
+    // videoClose.addEventListener("click", () => {
+    //   if(videoWrap.classList.contains("video-big_active")) {
+    //     if(video.played) {
+    //       video.pause();
+    //     }
 
-      if(clickedElementsTree.includes(video)) {
-        return;
-      } else {
-        if(video.played) {
-          video.pause();
-        }
+    //     videoWrap.classList.remove("video-big_active")
+    //   }
+    // })
 
-        videoWrap.classList.remove("video-big_active");
-      }
-    })
-  }
+    //При клике вне модального окна - скрываем его
+  //   videoWrap.addEventListener("click", (event) => {
+  //     const clickedElementsTree = event.composedPath();
 
-  const miniVideo = () => {
-    const videoWrap = document.querySelector(".how-work__video");
-    const preview = videoWrap.querySelector(".how-work__video-poster");
-    const video = videoWrap.querySelector("video");
+  //     if(clickedElementsTree.includes(video)) {
+  //       return;
+  //     } else {
+  //       if(video.played) {
+  //         video.pause();
+  //       }
 
-    preview.addEventListener("click", () => {
-      videoWrap.classList.add("how-work__video_active");
-    })
+  //       videoWrap.classList.remove("video-big_active");
+  //     }
+  //   })
+}
 
-    //playPaused(video);
-  }
+  // const miniVideo = () => {
+  //   const videoWrap = document.querySelector(".how-work__video");
+  //   const preview = videoWrap.querySelector(".how-work__video-poster");
+  //   const video = videoWrap.querySelector("video");
 
-  miniVideo();
+  //   preview.addEventListener("click", () => {
+  //     videoWrap.classList.add("how-work__video_active");
+  //   })
+
+  //   //playPaused(video);
+  // }
+
+  //miniVideo();
   fullVideo();
 }
 
