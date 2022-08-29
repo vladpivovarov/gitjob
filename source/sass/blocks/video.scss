@@ -26,7 +26,7 @@
   top: 0;
   height: 100%;
   opacity: 0;
-
+  visibility: hidden;
   background-color: rgba(#000, .7);
   z-index: 10;
   display: flex;
@@ -37,7 +37,7 @@
   &_active {
     left: 0;
     opacity: 1;
-
+    visibility: visible;
   }
 
   & video {
