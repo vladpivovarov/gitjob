@@ -6,6 +6,8 @@ const video = () => {
     const video = videoWrap.querySelectorAll("video")[0];
     const videoClose = videoWrap.querySelector(".video-big__close");
 
+    video.pause();
+
     video.addEventListener("click", (e) => {
       e.preventDefault();
       if(video.paused) {
