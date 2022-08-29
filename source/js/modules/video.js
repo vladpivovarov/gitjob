@@ -8,7 +8,6 @@ const video = () => {
 
     video.addEventListener("click", (e) => {
       e.preventDefault();
-      video.load();
       if(video.paused) {
         video.play();
         console.log("play");
