@@ -11,17 +11,17 @@ import video from "./modules/video";
 import miniSlider from "./modules/miniSlider";
 import menu from "./modules/menu";
 
-checkJs();
-fullscreen();
-slider();
-question();
-Inputmask();
-mask();
-validate();
-modal();
+// checkJs();
+// fullscreen();
+// slider();
+// question();
+// Inputmask();
+// mask();
+// validate();
+// modal();
 video();
-miniSlider();
-menu();
+// miniSlider();
+// menu();
 
 
 
