@@ -18,7 +18,7 @@ const video = () => {
         console.log("pause");
       }
 
-      let timerId = setInterval(() => console.log(video.paused), 2000);
+      let timerId = setInterval(() => console.log(video.paused), 1000);
     })
 
     btn.addEventListener("click", () => {
