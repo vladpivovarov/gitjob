@@ -18,9 +18,7 @@ const video = () => {
         console.log("pause");
       }
 
-      if(video.paused) {
-        console.log("parasha");
-      }
+      let timerId = setInterval(() => console.log(video.paused), 2000);
     })
 
     btn.addEventListener("click", () => {
