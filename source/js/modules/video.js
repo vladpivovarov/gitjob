@@ -12,6 +12,8 @@ const video = () => {
       e.preventDefault();
       if(video.paused) {
         video.play();
+        video.play();
+        video.play();
         console.log("play");
       } else if(video.played) {
         video.pause();
