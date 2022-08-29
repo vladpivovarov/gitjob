@@ -3,17 +3,37 @@ const video = () => {
   const fullVideo = () => {
     const videoWrap = document.querySelector(".video-big");
     const btn = document.querySelector(".smart__play-link");
-    const video = videoWrap.querySelector("video");
+    const video = videoWrap.querySelectorAll("video")[0];
     const videoClose = videoWrap.querySelector(".video-big__close");
+
+    video.addEventListener("click", (e) => {
+      e.preventDefault();
+      if(video.paused) {
+        video.play();
+        console.log("play");
+      } else if(video.played) {
+        video.pause();
+        console.log("pause");
+      }
+    })
 
     btn.addEventListener("click", () => {
       videoWrap.classList.add("video-big_active");
+
+      if(video.paused) {
+        video.play();
+      }
     })
+
+
 
     //При клике вне модального окна - скрываем его
     videoClose.addEventListener("click", () => {
       if(videoWrap.classList.contains("video-big_active")) {
-        video.pause();
+        if(video.played) {
+          video.pause();
+        }
+
         videoWrap.classList.remove("video-big_active")
       }
     })
@@ -25,7 +45,10 @@ const video = () => {
       if(clickedElementsTree.includes(video)) {
         return;
       } else {
-        video.pause();
+        if(video.played) {
+          video.pause();
+        }
+
         videoWrap.classList.remove("video-big_active");
       }
     })
