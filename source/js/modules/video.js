@@ -17,6 +17,10 @@ const video = () => {
         video.pause();
         console.log("pause");
       }
+
+      if(video.paused) {
+        console.log("parasha");
+      }
     })
 
     btn.addEventListener("click", () => {
