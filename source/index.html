@@ -21,15 +21,11 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
   <link rel="manifest" href="./favicon/manifest.json">
   <meta name="msapplication-TileImage" content="./favicon/ms-icon-144x144.png">
-  <link rel="preload" href="fonts/gilroy-medium.woff2" as="font" crossorigin>
-  <link rel="preload" href="fonts/gilroy-regular.woff2" as="font" crossorigin>
-  <link rel="preload" href="fonts/gilroy-semibold.woff2" as="font" crossorigin>
-  <link rel="preload" href="fonts/gilroy-bold.woff2" as="font" crossorigin>
   <link rel="stylesheet" href="css/style.min.css">
-  <!-- <script src="./js/additionally/scroll.min.js" defer></script>
+  <script src="./js/additionally/scroll.min.js" defer></script>
   <script src="./js/additionally/modernizr-custom.js" async></script>
   <script src="./js/additionally/swiper-bundle.min.js" defer></script>
-  <script src="./js/additionally/swipe.js" defer></script> -->
+  <script src="./js/additionally/swipe.js" defer></script>
   <script src="./js/main.js" defer></script>
   </script>
 </head>
@@ -666,7 +662,7 @@
       </ul>
     </footer>
     <div class="video video-big video-big_active">
-      <video controls="controls">
+      <video controls="controls" preload="metadata">
         <source src="./files/Показываем за 90 секунд как работает GitJob (480).mp4" type="video/mp4"><source>
       </video>
       <div class="video-big__close"></div>
