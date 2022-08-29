@@ -5,18 +5,30 @@ const video = () => {
     const btn = document.querySelector(".smart__play-link");
     const video = videoWrap.querySelectorAll("video")[0];
     const videoClose = videoWrap.querySelector(".video-big__close");
+    let playPause = 0;
 
     video.addEventListener("click", (e) => {
       e.preventDefault();
       if(video.paused) {
         video.play();
+        playPause = 1;
         console.log("play");
       } else if(video.played) {
         video.pause();
+        playPause = 0;
         console.log("pause");
       }
 
-      let timerId = setInterval(() => console.log(video.paused), 1000);
+      let timerId = setInterval(() => console.log("paused: ", video.paused), 1000);
+    })
+
+    video.addEventListener("pause", (e) => {
+      console.log("пауза");
+      if(playPause === 0) {
+        return;
+      } else {
+        video.play();
+      }
     })
 
     btn.addEventListener("click", () => {
@@ -24,6 +36,7 @@ const video = () => {
 
       if(video.paused) {
         video.play();
+        playPause = 1;
       }
     })
 
@@ -34,6 +47,7 @@ const video = () => {
       if(videoWrap.classList.contains("video-big_active")) {
         if(video.played) {
           video.pause();
+          playPause = 0;
         }
 
         videoWrap.classList.remove("video-big_active")
