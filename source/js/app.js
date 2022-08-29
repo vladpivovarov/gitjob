@@ -19,7 +19,7 @@ Inputmask();
 mask();
 validate();
 modal();
-video();
+
 miniSlider();
 menu();
 
